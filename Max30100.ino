@@ -32,7 +32,7 @@ Adafruit_MQTT_Publish   MinOx = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feed
 
 PulseOximeter pox;
 
-int batVar, oxiVar, BatMax = 120, BatMin = 60, OxMin = 90;
+int batVar, oxiVar, BatMax = 120, BatMin = 60, OxMin = 90, cont = 0;
 
 
 void onBeatDetected
@@ -116,6 +116,7 @@ void loop() {
   if (MQTT_connect()) {
       
       dadosMAX30100;
+      cont ++;
     } else {
       Serial.println("Problem to connect");
 
